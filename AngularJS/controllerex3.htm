@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ng-app="notesApp">
+<head>
+	<title>Controller Array</title>
+</head>
+<body ng-controller="MainCtrl as ctrl">
+
+	<div ng-repeat="note in ctrl.notes" align="center">
+		<h1><span class="label">{{note.label}} </span></h1>
+		<span class="status" ng-bind="note.done"></span>
+	</div>
+
+	<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.js">
+		
+	</script>
+
+	<script type="text/javascript">
+		angular.module('notesApp',[])
+		.controller('MainCtrl',[function()
+		{
+			var self=this;
+			self.notes=[
+			{id: 1,label:'Firstnote',done:true},
+			{id: 2,label:'Secondnote',done:false},
+			{id: 3,label:'Thirdnote',done:true},
+			{id: 4,label: 'Fourthnote',done:false},
+			];
+			console.log('HEllo samrat')
+		}]);
+	</script>
+
+</body>
+</html>

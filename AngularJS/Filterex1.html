@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html >
+<head>
+	<title>Filter Ex 1</title>
+</head>
+<body ng-app="FiltersApp">
+	<div ng-controller="FilterCtrl as ctrl">
+	<div>
+		Amount as a number: {{ctrl.amount | number}}
+	</div>
+	<div>
+		Total Cost as a currency: {{ctrl.totalcost | currency}}
+	</div>
+	<div>
+		Total Cost in INR: {{ctrl.totalcost | currency:'INR '}}
+	</div>
+	<div>
+		Shouting the name: {{ctrl.name1 | uppercase | limitTo:-3}}
+	</div>
+	<div>
+		Whispering the name: {{ctrl.name1 | lowercase}}
+	</div>
+	<div>
+		Start Time: {{ctrl.timeStamp | date:'medium'}}
+	</div>
+</div>
+
+<script 
+src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.js">
+	
+</script>
+<script type="text/javascript">
+	angular.module('FiltersApp',[])
+	.controller('FilterCtrl',[function()
+	{
+		this.amount=1224;
+		this.totalcost=4520;
+		this.name1='Samrat';
+		this.timeStamp=new Date().getTime();
+	}]);
+</script>
+</body>
+</html>
